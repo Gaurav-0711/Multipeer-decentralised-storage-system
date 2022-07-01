@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/material.dart';
 import 'ThemeClass.dart';
 import 'rsa.dart';
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.system,
       darkTheme: ThemeClass.darkTheme,
-      home: const MyHomePage(title: 'Dashboard'),
+      home: const Homely(title: 'Dashboard'),
     );
   }
 }
@@ -44,51 +46,42 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-      return Scaffold(
+    return Scaffold(
         appBar: AppBar(
           title: Text(widget.title),
-          actions:  <Widget>[
-         TextButton(
-                onPressed: () {},
-                child: const Text("Save"),
-         ),
-          TextButton(
-            onPressed: () {},
-            child: const Text("Lessgo"),
-        ), 
-
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {},
+              child: const Text("Save"),
+            ),
+            TextButton(
+              onPressed: () {},
+              child: const Text("Lessgo"),
+            ),
           ],
         ),
         body: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              const Text(
-                'Who all use this app?',
-              ),
-              Text(
-                '$_counter\n  $_sum',
-                
-                
-                style: Theme.of(context).textTheme.headline4,
-              ),
-              TextButton(
-                style: ButtonStyle(
-                  foregroundColor:
-                      MaterialStateProperty.all<Color>(Colors.blue),
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                const Text(
+                  'Who all use this app?',
                 ),
-                onPressed: () {
-                  _incrementCounter();
-                },
-                child: const Text('Hit it guys'),
-              ),
-              const IconButton(
-                icon: Icon(Icons.ac_unit_outlined),
-                onPressed: () {
-            Navigator.push(
-              MaterialPageRoute(builder: () async => const SecondRoute()),);
-            ],
-          ),
+                Text(
+                  '$_counter\n  $_sum',
+                  style: Theme.of(context).textTheme.headline4,
+                ),
+                TextButton(
+                  style: ButtonStyle(
+                    foregroundColor:
+                        MaterialStateProperty.all<Color>(Colors.blue),
+                  ),
+                  onPressed: () {
+                    _incrementCounter();
+                  },
+                  child: const Text('Hit it guys'),
+                ),
+              ]),
         ),
         floatingActionButton: FloatingActionButton(
             onPressed: _resetCounter,
@@ -98,9 +91,10 @@ class _MyHomePageState extends State<MyHomePage> {
         //   onPressed: _incrementCounter,
         //   tooltip: 'Increment',
         //   child: const Icon(Icons.add),
-        ); 
+        );
   }
 }
+
 class SecondRoute extends StatelessWidget {
   const SecondRoute({super.key});
 
@@ -117,6 +111,36 @@ class SecondRoute extends StatelessWidget {
           },
           child: const Text('Go back!'),
         ),
+      ),
+    );
+  }
+}
+
+class Homely extends StatefulWidget {
+  final String title;
+  const Homely({Key? key, required this.title}) : super(key: key);
+
+  @override
+  _HomelyState createState() => _HomelyState();
+}
+
+class _HomelyState extends State<Homely> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 56, 18, 210),
+        title: Text('Welcome to our app'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.upload_file_rounded),
+            onPressed: () {},
+          ),
+          IconButton(
+            icon: const Icon(Icons.download_for_offline_outlined),
+            onPressed: () {},
+          ),
+        ],
       ),
     );
   }
