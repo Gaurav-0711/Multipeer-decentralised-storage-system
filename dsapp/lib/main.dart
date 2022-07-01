@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'ThemeClass.dart';
 import 'rsa.dart';
@@ -129,8 +127,20 @@ class _HomelyState extends State<Homely> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 56, 18, 210),
-        title: Text('Welcome to our app'),
+        // backgroundColor: Color.fromARGB(255, 56, 18, 210),
+        title:const Text('Welcome to our app'),
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+              colors: <Color>[
+                Color.fromARGB(255, 44, 8, 85),
+                Color.fromARGB(255, 45, 69, 206),
+              ],
+            ),
+          ),
+        ),
         actions: [
           IconButton(
             icon: const Icon(Icons.upload_file_rounded),
@@ -142,6 +152,21 @@ class _HomelyState extends State<Homely> {
           ),
         ],
       ),
+      body: Center(
+          child: Container(
+        padding: const EdgeInsets.all(20.0),
+        margin: const EdgeInsets.all(50),
+        decoration: BoxDecoration(
+          border: Border.all(color: Colors.lightGreenAccent),
+        ),
+        child: const Center(
+            child: Text(
+                'Hello guys\n We are a group of 6th sem CSE students who are dwelling into\n the world of blockchain',
+      textAlign: TextAlign.center,
+      ),
+      ),
+      ),
+    )
     );
   }
 }
