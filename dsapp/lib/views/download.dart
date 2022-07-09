@@ -13,9 +13,15 @@ class _DownloadState extends State<Download> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         // backgroundColor: Color.fromARGB(255, 56, 18, 210),
-        title: const Text('Welcome to our app'),
+       title:  TextButton( 
+          child:  const Text('Welcome to the future'), 
+          onPressed: () {
+                Navigator.of(context).pushNamed('/');
+              },
+          ),
         flexibleSpace: Container(
           decoration: const BoxDecoration(
             gradient: LinearGradient(
@@ -41,9 +47,23 @@ class _DownloadState extends State<Download> {
           ),
         ],
       ),
-      body: const Center(
+      body:Container(
+        constraints: const BoxConstraints.expand(),
+                decoration: const BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage("images/blockchain.jpg"),
+                        fit: BoxFit.cover)),
+        
+        child:const Center(
         child: Text('Download this mofo'),
+      )
       ),
+      floatingActionButton: FloatingActionButton(onPressed: () {
+      
+    },
+    child: const Icon(Icons.downloading),),
+    floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
+    floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
     );
   }
 }
