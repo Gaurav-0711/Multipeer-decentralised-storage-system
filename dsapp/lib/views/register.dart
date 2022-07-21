@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class Register extends StatefulWidget {
+  const Register({Key? key}) : super(key: key);
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<Register> createState() => _RegisterState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +35,7 @@ class _LoginPageState extends State<LoginPage> {
                   BoxDecoration(border: Border.all(color: Colors.blueAccent)),
               child: TextField(
                 decoration: InputDecoration(
-                    labelText: 'Username ', hintText: 'Enter Your Username'),
+                    labelText: 'New Username ', hintText: 'Enter Your Username'),
               ),
             ),
             Container(
@@ -52,17 +52,22 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             Container(
-              child: IconButton(
-                icon: Icon(Icons.login_outlined),
-                onPressed: () {},
+              margin: const EdgeInsets.all(15.0),
+              padding: const EdgeInsets.all(3.0),
+              decoration:
+                  BoxDecoration(border: Border.all(color: Colors.blueAccent)),
+              child: TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                    border: InputBorder.none,
+                    labelText: 'Re-enter Password',
+                    hintText: 'Enter Password again '),
               ),
             ),
             Container(
-              child: TextButton(
-                child: Text('Not a member ? , Regsiter now'),
-                onPressed: () {
-                  Navigator.of(context).pushNamed('/register');
-                },
+              child: IconButton(
+                icon: const Icon(Icons.settings_input_composite_rounded),
+                onPressed: () {},
               ),
             )
           ],

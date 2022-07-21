@@ -1,4 +1,5 @@
 import 'package:dsapp/views/login.dart';
+import 'package:dsapp/views/register.dart';
 import 'package:flutter/material.dart';
 import 'functions/ThemeClass.dart';
 import 'functions/rsa.dart';
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => const LoginPage(),
         '/upload': (context) => const Upload(),
         '/download':(context) => const Download(),
+        '/register':(context) => const Register(),
       },
     );
   }
