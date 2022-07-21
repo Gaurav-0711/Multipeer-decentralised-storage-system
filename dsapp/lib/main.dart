@@ -1,3 +1,4 @@
+import 'package:dsapp/views/login.dart';
 import 'package:flutter/material.dart';
 import 'functions/ThemeClass.dart';
 import 'functions/rsa.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeClass.darkTheme,
       initialRoute: '/',
       routes: {
-        '/': (context) => const Homely(title: 'Welcome'),
+        '/': (context) => const LoginPage(),
         '/upload': (context) => const Upload(),
         '/download':(context) => const Download(),
       },

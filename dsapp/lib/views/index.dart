@@ -58,7 +58,7 @@ class _HomelyState extends State<Homely> {
             child: Center(
               child: Container(
                 padding: const EdgeInsets.all(20.0),
-                margin: const EdgeInsets.all(50),
+                margin: const EdgeInsets.all(90),
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.lightGreenAccent),
                 ),
@@ -69,6 +69,8 @@ class _HomelyState extends State<Homely> {
                   ),
                 ),
               ),
-            )));
+            )
+            )
+            );
   }
 }
